@@ -1,0 +1,35 @@
+<!-- user-management.component.html -->
+<div class="user-management-container">
+    <h2>User Management</h2>
+  
+    <div *ngIf="users.length === 0" class="no-users">
+      No users available.
+    </div>
+  
+    <table *ngIf="users.length > 0" class="user-table">
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.userName }}</td>
+          <td>{{ user.email }}</td>
+          <td>
+            <span class="status" [ngClass]="{ 'active': user.isActive, 'inactive': !user.isActive }">
+              {{ user.isActive ? 'Active' : 'Inactive' }}
+            </span>
+          </td>
+          <td>
+            <button class="edit-btn" (click)="editUser(user.id)">Edit</button>
+            <button class="delete-btn" (click)="deleteUser(user.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

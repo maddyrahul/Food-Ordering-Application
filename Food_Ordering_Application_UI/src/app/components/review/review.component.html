@@ -1,0 +1,9 @@
+<h2>Reviews</h2>
+<div *ngFor="let review of reviews">
+  <p>Rating: {{ review.rating }}</p>
+  <p>Comment: {{ review.comment }}</p>
+  <p *ngIf="review.response">Response: {{ review.response }}</p>
+
+  <textarea [(ngModel)]="responseText" [ngModelOptions]="{standalone: true}" placeholder="Your response here..."></textarea>
+  <button (click)="respondToReview(review.reviewId)">Respond</button>
+</div>

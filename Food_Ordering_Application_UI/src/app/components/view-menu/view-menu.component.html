@@ -1,0 +1,17 @@
+<h4 class="menu-heading">Menu</h4>
+
+<!-- Menu Item List -->
+<ul *ngIf="menuItems.length > 0; else noMenu" class="menu-list">
+  <li *ngFor="let item of menuItems" class="menu-item">
+    <div class="item-details">
+      <span class="menu-item-name">{{ item.name }}</span>
+      <span class="menu-item-price">{{ item.price | currency }}</span>
+    </div>
+    <button class="add-cart-button" (click)="addToCart(item.menuId)">Add to Cart</button>
+  </li>
+</ul>
+
+<!-- No Menu Message -->
+<ng-template #noMenu>
+  <p class="no-menu-text">No menu items available for this restaurant.</p>
+</ng-template>

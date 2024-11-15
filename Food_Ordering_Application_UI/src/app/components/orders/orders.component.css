@@ -1,0 +1,93 @@
+/* General Card Styling */
+.order-card {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  transition: transform 0.2s ease-in-out;
+}
+
+.order-card:hover {
+  transform: scale(1.02);
+}
+
+/* Header Styling */
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 10px;
+}
+
+.order-header h3 {
+  font-size: 1.5em;
+  color: #333;
+  margin: 0;
+}
+
+.order-date {
+  font-size: 0.9em;
+  color: #999;
+}
+
+/* Order Info Styling */
+.order-info {
+  padding: 15px 0;
+  color: #555;
+}
+
+.order-info p {
+  margin: 5px 0;
+}
+
+.order-status {
+  font-weight: bold;
+  color: #27ae60; /* Green for success */
+}
+
+.order-amount {
+  font-weight: bold;
+  color: #c0392b; /* Red for total amount */
+}
+
+.dispute-resolution {
+  color: #e67e22; /* Orange color */
+}
+
+/* Order History Styling */
+.order-history {
+  margin-top: 15px;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 15px;
+}
+
+.order-history h4 {
+  font-size: 1.2em;
+  color: #333;
+}
+
+.history-item {
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.history-item p {
+  margin: 5px 0;
+  color: #666;
+  font-size: 0.9em;
+}
+
+.history-item p strong {
+  color: #333;
+}
+.no-order-message {
+  text-align: center;
+  font-size: 1.2em;
+  color: #777;
+  margin-top: 20px;
+}

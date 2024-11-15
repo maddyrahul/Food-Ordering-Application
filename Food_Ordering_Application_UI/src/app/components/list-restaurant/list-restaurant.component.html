@@ -1,0 +1,33 @@
+<div class="content-wrapper">
+  <h2 class="restaurant-heading">All Restaurants</h2>
+  <div class="search-bar">
+    <input 
+      type="text" 
+      placeholder="Search restaurants..." 
+      [(ngModel)]="searchTerm" 
+      (input)="searchRestaurants()" 
+      class="search-input"
+    />
+  </div>
+
+<!-- Display "No Results" Message if No Restaurant Matches -->
+<div *ngIf="filteredRestaurants.length === 0 && searchTerm" class="no-results">
+  <p>No restaurants found matching "{{ searchTerm }}".</p>
+</div>
+
+  <!-- Restaurant List -->
+  <div *ngIf="filteredRestaurants.length > 0" class="restaurants-container">
+    <div class="restaurant-card" *ngFor="let restaurant of filteredRestaurants">
+      <div class="restaurant-card-inner">
+        <div class="restaurant-info">
+          <h3 class="restaurant-name">{{ restaurant.name }}</h3>
+          <p class="restaurant-location">{{ restaurant.location }}</p>
+          <p class="restaurant-cuisine">{{ restaurant.cuisine }}</p>
+        </div>
+        <div class="button-container">
+          <button class="button-primary" (click)="viewMenu(restaurant.restaurantId)">View Menu</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

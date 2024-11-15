@@ -1,0 +1,24 @@
+<div *ngIf="orderDetailsArray.length === 0" class="no-order-message">
+  <p>You have no orders.</p>
+</div>
+
+<div *ngFor="let order of orderDetailsArray" class="order-card">
+  <div class="order-header">
+    <h3>Order Details</h3>
+    <p class="order-date">{{ order.orderDate | date: 'medium' }}</p>
+  </div>
+  
+  <div class="order-info">
+    <p><strong>Status:</strong> <span class="order-status">{{ order.status }}</span></p>
+    <p><strong>Total Amount:</strong> <span class="order-amount">${{ order.totalAmount }}</span></p>
+    <!-- <p><strong>Dispute Resolution:</strong> <span class="dispute-resolution">{{ order.disputeResolution }}</span></p> -->
+  </div>
+
+  <div class="order-history">
+    <h4>Order Items</h4>
+    <div *ngFor="let history of order.orderHistory" class="history-item">
+      <p><strong>Menu Name:</strong> {{ history.menuName }}</p>
+      <p><strong>Menu Price:</strong> ${{ history.menuPrice }}</p>
+    </div>
+  </div>
+</div>

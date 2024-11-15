@@ -1,0 +1,29 @@
+<!-- edit-user.component.html -->
+<div class="edit-user-container">
+    <h2>Edit User</h2>
+    <form *ngIf="user" [formGroup]="editUserForm" (ngSubmit)="onSubmit()" class="edit-user-form">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input id="email" formControlName="email" type="email" class="form-control" />
+        <div *ngIf="editUserForm.get('email')?.invalid && editUserForm.get('email')?.touched" class="error">
+          Valid email is required.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input id="username" formControlName="username" type="text" class="form-control" />
+        <div *ngIf="editUserForm.get('username')?.invalid && editUserForm.get('username')?.touched" class="error">
+          Username is required.
+        </div>
+      </div>
+  
+      <div class="form-group form-checkbox">
+        <label for="isActive">Active Status</label>
+        <input id="isActive" formControlName="isActive" type="checkbox" class="form-control-checkbox" />
+      </div>
+  
+      <button type="submit" [disabled]="editUserForm.invalid" class="submit-btn">Update User</button>
+    </form>
+  </div>
+  

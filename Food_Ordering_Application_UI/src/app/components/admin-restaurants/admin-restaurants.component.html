@@ -1,0 +1,32 @@
+<!-- admin-restaurants.component.html -->
+<div class="restaurant-list">
+    <h2>Manage Restaurants</h2>
+    
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+  
+    <table class="restaurant-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Location</th>
+          <th>Cuisine</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let restaurant of restaurants">
+          <td>{{ restaurant.name }}</td>
+          <td>{{ restaurant.location }}</td>
+          <td>{{ restaurant.cuisine }}</td>
+          <td>{{ restaurant.isActive ? 'Active' : 'Inactive' }}</td>
+          <td>
+            <button (click)="toggleRestaurantStatus(restaurant)">
+              {{ restaurant.isActive ? 'Deactivate' : 'Activate' }}
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

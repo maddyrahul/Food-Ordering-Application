@@ -1,0 +1,140 @@
+/* Cart Heading */
+.cart-heading {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Cart List */
+  .cart-list {
+    padding: 0;
+    list-style: none;
+    max-width: 600px;
+    margin: 0 auto 20px;
+  }
+  
+  .cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .cart-item:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Cart Item Details */
+  .cart-item-details {
+    flex-grow: 1;
+  }
+  
+  .cart-item-name {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #333;
+  }
+  
+  .cart-item-price {
+    display: block;
+    font-size: 1rem;
+    color: #666;
+    margin-top: 5px;
+  }
+  
+  .cart-item-quantity {
+    font-size: 0.9rem;
+    color: #888;
+    margin-top: 5px;
+  }
+  
+  /* Cart Item Actions */
+  .cart-item-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .remove-item-button,
+  .update-quantity-button {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .remove-item-button {
+    background-color: #ff4c4c;
+    color: #fff;
+  }
+  
+  .remove-item-button:hover {
+    background-color: #e04343;
+  }
+  
+  .update-quantity-button {
+    background-color: #4caf50;
+    color: #fff;
+  }
+  
+  .update-quantity-button:hover {
+    background-color: #449d48;
+  }
+  
+  /* Total Amount */
+  .total-amount {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #333;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .amount {
+    font-weight: 600;
+    color: #333;
+  }
+  
+  /* Place Order Button */
+  .place-order-button {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto 0;
+    padding: 15px;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .place-order-button:hover {
+    background-color: #0069d9;
+  }
+  
+  /* No Items in Cart */
+  .no-items-text {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #888;
+  }
+  

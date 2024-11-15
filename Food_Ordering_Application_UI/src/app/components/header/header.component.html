@@ -1,0 +1,54 @@
+<header class="navbar navbar-expand-md bg-success text-warning py-3 shadow-sm">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+      <div class="navbar-brand fw-bold fs-3">
+        <span routerLink="/" class="text-warning text-decoration-none">Food Ordering Application</span>
+      </div>
+  
+      <button class="navbar-toggler text-warning border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="ms-auto">
+          <ul class="navbar-nav">
+            <li class="nav-item" *ngIf="isLoggedIn() && (role === 'Admin')">
+              <button type="button" class="btn btn-outline-warning" routerLink="/users">Users</button>
+            </li>
+            <li class="nav-item" *ngIf="!isLoggedIn()" >
+              <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#generalmodal" routerLink="/login">Login</button>
+            </li>
+            <li class="nav-item" *ngIf="isLoggedIn() && (role === 'Customer')">
+              <button type="button" class="btn btn-outline-warning" routerLink="/list-restaurant">Home</button>
+            </li>
+            <li class="nav-item" *ngIf="isLoggedIn() && (role === 'RestaurantOwner')">
+              <button type="button" class="btn btn-outline-warning" routerLink="/all-restaurants">All Restaurant</button>
+            </li>
+            <li class="nav-item" *ngIf="isLoggedIn() && (role === 'Admin')">
+              <button type="button" class="btn btn-outline-warning" routerLink="/admin-restaurants">Manage Restaurant</button>
+            </li>
+            <li class="nav-item" *ngIf="isLoggedIn() && (role === 'RestaurantOwner')">
+              <button type="button" class="btn btn-outline-warning" routerLink="/register-restaurant">Register Restaurant</button>
+            </li>
+            
+            <li class="nav-item" *ngIf="isLoggedIn() && (role === 'Customer')">
+              <button type="button" class="btn btn-outline-warning" routerLink="/cart">Carts</button>
+            </li>
+
+            
+  
+            <li class="nav-item" *ngIf="isLoggedIn() && (role === 'Customer')">
+              <button type="button" class="btn btn-outline-warning" routerLink="/orders">Order History</button>
+            </li>
+
+            <li class="nav-item" *ngIf="isLoggedIn()">
+              <button type="button" class="btn btn-outline-warning" (click)="logout()">Logout</button>
+            </li>
+            <li class="nav-item">
+              <button type="button" class="btn btn-outline-warning">Help</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+  

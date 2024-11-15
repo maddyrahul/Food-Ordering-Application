@@ -1,0 +1,47 @@
+<h2 class="restaurant-heading">All Restaurants</h2>
+
+<!-- Search Bar -->
+<div class="search-bar">
+  <input 
+    type="text" 
+    placeholder="Search restaurants..." 
+    [(ngModel)]="searchTerm" 
+    (input)="searchRestaurants()" 
+    class="search-input"
+  />
+</div>
+
+<!-- Display "No Results" Message if No Restaurant Matches -->
+<div *ngIf="filteredRestaurants.length === 0 && searchTerm" class="no-results">
+  <p>No restaurants found matching "{{ searchTerm }}".</p>
+</div>
+
+<!-- Restaurant List -->
+<div class="restaurants-container">
+  <div class="restaurant-card" *ngFor="let restaurant of filteredRestaurants">
+    <h3 class="restaurant-name">{{ restaurant.name }}</h3>
+    <p class="restaurant-info">{{ restaurant.location }} | {{ restaurant.cuisine }}</p>
+
+    <!-- Action Buttons -->
+    <div class="button-container">
+      <button class="button-primary" (click)="addMenu(restaurant.restaurantId)">Add Menu</button>
+      <button class="button-secondary" (click)="viewMenu(restaurant.restaurantId)">View Menu</button>
+    </div>
+
+    <!-- Menu Items for the Selected Restaurant -->
+    <div *ngIf="selectedRestaurantId === restaurant.restaurantId" class="menu-section">
+      <h4 class="menu-heading">Menu:</h4>
+      <ul *ngIf="menuItems.length > 0; else noMenu">
+        <li *ngFor="let item of menuItems" class="menu-item">
+          <span class="menu-item-name">{{ item.name }}</span>
+          <span class="menu-item-price">{{ item.price | currency }}</span>
+          <button class="menu-item-button edit-btn" (click)="editMenu(item.menuId)">Edit</button>
+          <button class="menu-item-button delete-btn" (click)="deleteMenu(item.menuId)">Delete</button>
+        </li>
+      </ul>
+      <ng-template #noMenu>
+        <p class="no-menu-text">No menu items available for this restaurant.</p>
+      </ng-template>
+    </div>
+  </div>
+</div>

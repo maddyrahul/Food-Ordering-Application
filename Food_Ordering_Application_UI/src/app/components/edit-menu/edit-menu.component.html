@@ -1,0 +1,31 @@
+<h2 class="form-heading">Edit Menu Item</h2>
+
+<form (submit)="updateMenuItem()" class="edit-menu-form">
+  <div class="form-group">
+    <label for="name" class="form-label">Menu Item Name:</label>
+    <input 
+      id="name" 
+      type="text" 
+      [(ngModel)]="menuItem.name" 
+      [ngModelOptions]="{standalone: true}" 
+      placeholder="Enter new name" 
+      required 
+      class="form-input"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="price" class="form-label">Price:</label>
+    <input 
+      id="price" 
+      type="number" 
+      [(ngModel)]="menuItem.price" 
+      [ngModelOptions]="{standalone: true}" 
+      placeholder="Enter new price" 
+      required 
+      class="form-input"
+    />
+  </div>
+
+  <button type="submit" class="submit-btn">Update Menu Item</button>
+</form>
